@@ -75,7 +75,7 @@ h2 {
   min-width: 70%;
 }
 
-.product_list_container {
+#productContainer {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
@@ -254,7 +254,7 @@ h2 {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .product_list_container {
+  #productContainer {
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     width: 100%;
@@ -271,7 +271,7 @@ h2 {
 }
 
 @media (max-width: 600px) {
-  .product_list_container {
+  #productContainer {
     grid-template-columns: 1fr;
   }
 }
