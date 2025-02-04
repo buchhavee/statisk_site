@@ -7,9 +7,10 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
     productContainer.innerHTML = `
     
      <div class="productsite-image">
-            <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="Sahara Team India Jersey">
+            <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="">
+            <span class="tilbud ${data.discount && "isOnSale"}">-${data.discount}%</span>
         </div>
-
+        
         <div class="product-info">
             <div class="info-group">
                 <span class="info-label">Model name</span>

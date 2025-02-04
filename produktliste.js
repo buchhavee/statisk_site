@@ -1,5 +1,8 @@
 const myCategory = new URLSearchParams(window.location.search).get("category");
 const listContainer = document.querySelector("#productContainer");
+const categoryHeading = document.querySelector("#categoryHeading");
+
+categoryHeading.textContent = `${myCategory}`;
 
 fetch(`https://kea-alt-del.dk/t7/api/products?category=${myCategory}`)
   .then((response) => response.json())
@@ -12,7 +15,9 @@ function showList(products) {
       (product) =>
         `
     <div class="product">
+      <article class="product ${product.discount && "udsolgt-overlay"} ${product.soldout && "udsolgt-overlay"}">
       <div class="product-image">
+      
         <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="${product.productdisplayname}">
       </div>
       <div class="product-description">
