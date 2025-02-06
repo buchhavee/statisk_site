@@ -8,10 +8,19 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
     
      <div class="productsite-image">
             <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="">
-            <span class="tilbud ${data.discount && "isOnSale"}">-${data.discount}%</span>
+            <span class="discount-productpage ${data.discount && "isOnSale"}">-${data.discount}%</span>
+            <span class="sold-out-productpage ${data.soldout && "isSoldOut"}">
+                  <p>Sold out</p>
+            </span>
+            
         </div>
         
         <div class="product-info">
+            <div class="price">
+                  <p class="${data.discount && "crossout"}">${data.price},-</p>
+                  <p class="tilbud-hidden ${data.discount && "isOnSale"}">Now <span>${Math.floor(data.price - (data.price * data.discount) / 100)}<span/>,-</p>
+            </div>
+            
             <div class="info-group">
                 <span class="info-label">Model name</span>
                 <span class="info-value">${data.productdisplayname}</span>
