@@ -45,10 +45,6 @@ p {
   margin-bottom: 0.5rem;
 }
 
-.header img {
-  filter: invert(1);
-}
-
 .header-links {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -275,6 +271,11 @@ p {
   display: grid;
   gap: 2rem;
   padding: 2rem 1rem;
+}
+
+.brand-logo {
+  width: 100px;
+  height: 100px;
 }
 
 .purchase-section {
