@@ -15,6 +15,7 @@ function showList(products) {
       (product) =>
         `
         <article class="product">
+          <a href="produkt.html?id=${product.id}">
           <div class="product-image">
             <img class="${product.soldout && "sold-out-img"}" src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="${product.productdisplayname}">
           </div>
@@ -32,8 +33,9 @@ function showList(products) {
               <span class="sold-out ${product.soldout && "isSoldOut"}">
                   <p>Sold out</p>
               </span>
-              <a href="produkt.html?id=${product.id}">Read more</a>
+              <a href="produkt.html?id=${product.id}" id="readmore">Read more</a>
           </div>
+          </a>
         </article>
       `
     )
@@ -44,3 +46,29 @@ function showList(products) {
 
   listContainer.innerHTML = markup;
 }
+
+document.querySelectorAll("option").forEach((knap) => knap.addEventListener("click", showFiltered));
+
+function showFiltered() {
+  if (!allData) {
+    console.error("Data not loaded yet");
+    return;
+  }
+  console.log("showFiltered");
+  const filter = this.dataset.gender;
+  if (filter == "All") {
+    showList(allData);
+  } else {
+    fraction = allData.filter((product) => product.gender === filter);
+    showList(fraction);
+  }
+}
+
+let allData;
+
+fetch(`https://kea-alt-del.dk/t7/api/products?category=${myCategory}`)
+  .then((response) => response.json())
+  .then((json) => {
+    allData = json;
+    showList(allData);
+  });
