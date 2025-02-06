@@ -15,12 +15,25 @@
             mads buchhave
         </h1>
         <div class="header-links">
-            <a href="">Categories</a>
+            <a href="index.html">Categories</a>
             <a href="">Brands</a>
             <a href="">Seasons</a>
         </div>
     </header>
     <main>
+        <label for="productfilter" class="product-label">Vis alle produkter</label>
+        <select id="productfilter" class="gender-select">
+            <option data-gender="All">All</option>
+            <option data-gender="Women">Womens</option>
+            <option data-gender="Men">Mens</option>
+            <option data-gender="Unisex">Unisex</option>
+        </select>
+
+        <!-- <button data-gender="All">All</button>
+        <button data-gender="Women">Womens</button>
+        <button data-gender="Men">Mens</button>
+        <button data-gender="Unisex">Unisex</button> -->
+
         <h2 id="categoryHeading"></h2>
         <div id="productContainer">
         </div>
