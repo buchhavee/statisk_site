@@ -154,8 +154,7 @@ p {
 #readmore {
   font-size: 1.2rem;
   font-weight: bolder;
-  text-decoration: underline;
-  color: blue;
+  color: #111184;
 }
 
 .sold-out,
